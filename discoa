@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+define('CONVERT_START', microtime(true));
+
+require __DIR__.'/vendor/autoload.php';
+
+use App\Console\Convert;
+
+$converter = new Convert();
+$converter->run();
