@@ -15,6 +15,7 @@
         "illuminate/database": "^7.26",
         "s9e/text-formatter": "2.7.4"
     },
+    "minimum-stability": "stable",
     "autoload" : {
         "files": [
             "app/Utils/helpers.php"
