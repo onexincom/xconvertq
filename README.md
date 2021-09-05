@@ -11,9 +11,9 @@ Discuz! X3.4 转换 Discuz! Q 3.0 转换测试，代码优化记录于此。
 
 ### 安装教程
 
-1.  下载该项目xconvertq文件放到服务器的任意文件夹下，https://gitee.com/ONEXIN/xconvertq
-2.  使用composer安装相关的依赖：```composer update```
-3.  打开Discuz!Q官方的教程继续操作，直到成功。https://discuz.com/docs/Discuzto.html
+1.  使用composer安装该项目xconvertq文件：```composer create-project onexin/discuzxtq```
+2.  打开Discuz!Q官方的教程：https://discuz.com/docs/Discuzto.html
+3.  继续操作，直到成功。
 
 ### 值得一提的事：
 1、转换提示编码错误BUG：
@@ -41,3 +41,5 @@ Discuz! X3.4 转换 Discuz! Q 3.0 转换测试，代码优化记录于此。
 
 ### 交流实践
 ONEXIN大数据新手Q群：189610242
+Github: https://github.com/onexincom/xconvertq
+Gitee: https://gitee.com/ONEXIN/xconvertq
