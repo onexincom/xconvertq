@@ -214,7 +214,7 @@ trait PostTrait
         return preg_replace_callback('%\r\n|\r|\n%iu',
             function ($matches) {
                 return "\n";
-                return '<p></p>';
+                //return '<p></p>';
             },
             $text
         );
@@ -227,9 +227,11 @@ trait PostTrait
      */
     public function fixUrl($text)
     {
-        return preg_replace_callback('%\[url\]([\s\S]*?)\[\/url\]%iu',
+        return preg_replace_callback('%\[url=?([^\]+])?\]([\s\S]*?)\[\/url\]%iu',
             function ($matches) {
-                return '<a href=' . $matches[1] . '>' . $matches[1] . '</a>';
+                return !empty($matches[1])
+                    ? '<a href="' . $matches[1] . '" title="'. htmlspecialchars($matches[2]) .'">' . $matches[2] . '</a>'
+                    : '<a href="' . $matches[2] . '" title="'. htmlspecialchars($matches[2]) .'">' . $matches[2] . '</a>';
                 //return '[url=' . $matches[1] . ']' . $matches[1] . '[/url]';
             },
             $text
@@ -243,7 +245,7 @@ trait PostTrait
      */
     public function fixImg($text)
     {
-        return preg_replace_callback('%\[img=(\d+),(\d+)\]([\s\S]*?)\[\/img\]%iu',
+        return preg_replace_callback('%\[img=?(\d+)?,?(\d+)?\]([\s\S]*?)\[\/img\]%iu',
             function ($matches) {
                 if ($matches[1] == 0) {
                     $matches[1] = '100%';
@@ -251,7 +253,7 @@ trait PostTrait
                 if ($matches[2] == 0) {
                     $matches[2] = '100%';
                 }
-                return '<img width="' . $matches[1] . '" height="' . $matches[2] . '" src="' . $matches[3] . '>';
+                return '<img src="' . $matches[3] . '" width="' . $matches[1] . '" height="' . $matches[2] . '">';
                 //return '[img width="' . $matches[1] . '" height="' . $matches[2] . '" ]' . $matches[3] . '[/img]';
             },
             $text
