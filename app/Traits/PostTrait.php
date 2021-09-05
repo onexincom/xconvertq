@@ -227,11 +227,9 @@ trait PostTrait
      */
     public function fixUrl($text)
     {
-        return preg_replace_callback('%\[url=?([^\]+])?\]([\s\S]*?)\[\/url\]%iu',
+        return preg_replace_callback('%\[url=?([^\]]+)?\]([\s\S]*?)\[\/url\]%iu',
             function ($matches) {
-                return !empty($matches[1])
-                    ? '<a href="' . $matches[1] . '" title="'. htmlspecialchars($matches[2]) .'">' . $matches[2] . '</a>'
-                    : '<a href="' . $matches[2] . '" title="'. htmlspecialchars($matches[2]) .'">' . $matches[2] . '</a>';
+                return !empty($matches[1]) ? $matches[2]."<br>".$matches[1] : $matches[2];
                 //return '[url=' . $matches[1] . ']' . $matches[1] . '[/url]';
             },
             $text
