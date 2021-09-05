@@ -77,7 +77,7 @@ class ThreadCommand extends BaseCommand
                 'id' => Arr::get($thread, 'tid'),
                 'user_id' => Arr::get($thread, 'authorid'),
                 'category_id' => Arr::get($thread, 'fid'),
-                'type' => Thread::TYPE_OF_LONG,
+                'type' => Thread::TYPE_OF_ALL, // 99
                 'title' => Arr::get($thread, 'subject'),
                 'post_count' =>  intval(Arr::get($thread, 'replies')) + 1,
                 'view_count' => Arr::get($thread, 'views'),

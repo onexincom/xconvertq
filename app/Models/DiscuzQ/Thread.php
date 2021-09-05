@@ -13,6 +13,8 @@ class Thread extends DiscuzqBaseModel
 
     const TYPE_OF_IMAGE = 3;
 
+    const TYPE_OF_ALL = 99;//Q3.0
+
     const UNAPPROVED = 0;
 
     const APPROVED = 1;
