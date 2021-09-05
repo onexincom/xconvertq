@@ -40,6 +40,6 @@ Discuz! X3.4 转换 Discuz! Q 3.0 转换测试，代码优化记录于此。
 ```
 
 ### 交流实践
-ONEXIN大数据新手Q群：189610242
-Github: https://github.com/onexincom/xconvertq
-Gitee: https://gitee.com/ONEXIN/xconvertq
+- ONEXIN大数据新手Q群：189610242
+- Github: https://github.com/onexincom/xconvertq
+- Gitee: https://gitee.com/ONEXIN/xconvertq
